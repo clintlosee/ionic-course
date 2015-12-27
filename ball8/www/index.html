@@ -23,11 +23,9 @@
   </head>
   <body ng-app="ball8">
 	<ion-pane>
-		<ion-content class="ball-center-content padding" 
-					 scroll="false"
-					 ng-controller="PredictionController">
+		<ion-content class="ball-center-content padding" scroll="false" ng-controller="PredictionController">
 			<img class="logo" src="img/8ball.png" alt="" ng-click="ask()">
-		<p class="prediction" ng-class="{'show': answered}">{{prediction}}</p>
+		<p class="prediction" ng-class="{&apos;show&apos;: answered}">{{prediction}}</p>
 		</ion-content>
 	</ion-pane>
   </body>
