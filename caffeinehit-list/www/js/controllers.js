@@ -18,4 +18,12 @@ app.controller("YelpController", function ($scope, YelpService) {
             });
         }
     };
+    
+    $scope.getDirections = function(cafe) {
+        console.log('getting directions');
+    };
+    
+    $scope.openMap = function(cafe) {
+        console.log('opening map');
+    };
 });
