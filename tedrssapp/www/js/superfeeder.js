@@ -67,7 +67,7 @@ window.superfeedr = {
 			var googleFeedObject = {};
 			googleFeedObject.entries = [];
 			json.items.forEach(function(i) {
-				console.log(i);
+//				console.log(i);
 				googleFeedObject.entries.push({
 					title: i.title ,
 					link: i.permalinkUrl,

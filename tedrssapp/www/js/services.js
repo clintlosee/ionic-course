@@ -25,7 +25,6 @@ app.factory('FeedService', function ($http, $q, $rootScope, FEED_URL) {
 				});				
 			});
 		});		
-
 		return defer.promise;
 	};
 

@@ -1,6 +1,7 @@
 {
     "jscodehints.detectedExclusions": [
         "/Users/clintlosee/Code/Ionic/ionic-course/soundboard/gulpfile.js",
-        "/Users/clintlosee/Code/Ionic/ionic-course/caffeinehit-list/www/js/app.js"
+        "/Users/clintlosee/Code/Ionic/ionic-course/caffeinehit-list/www/js/app.js",
+        "/Users/clintlosee/Code/Ionic/ionic-course/tedrssapp/www/js/services.js"
     ]
 }
