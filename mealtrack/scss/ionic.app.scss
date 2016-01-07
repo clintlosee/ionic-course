@@ -22,15 +22,12 @@ $stable:                           #DEE1B6;
 $assertive:                        #BD5532;
 
 @import url(http://fonts.googleapis.com/css?family=Domine:400,700);
-$font-family-base: ‘Domine’, serif; 
-
-$ionicons-font-path: “../lib/ionic/fonts” !default;
+$font-family-base: 'Domine', serif; 
 
 // The path for our ionicons font files, relative to the built CSS in www/css
-$ionicons-font-path: "../lib/ionic/fonts" !default;
+$ionicons-font-path: "../www/lib/ionic/fonts" !default;
 
 // Include all of Ionic
-@import "www/lib/ionic/scss/ionic";
 @import "www/lib/ionic/scss/ionic";
 @import "www/scss/form.scss";
 @import "www/scss/styles.scss";
