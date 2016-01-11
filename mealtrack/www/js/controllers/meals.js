@@ -8,9 +8,9 @@ app.controller('MealListCtrl', function ($scope, $ionicLoading, MealService) {
 
 	$scope.meals = MealService;
 
-	$ionicLoading.show();
+//	$ionicLoading.show();
 	$scope.meals.load().then(function () {
-		$ionicLoading.hide();
+//		$ionicLoading.hide();
 	});
 
 	$scope.refreshItems = function () {
@@ -54,21 +54,26 @@ app.controller('MealCreateCtrl', function ($scope,
 	};
 
 	$scope.addPicture = function () {
-		//var options = {
-		//	quality: 50,
-		//	destinationType: Camera.DestinationType.DATA_URL,
-		//	sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
-		//	allowEdit: true,
-		//	encodingType: Camera.EncodingType.JPEG,
-		//	targetWidth: 480,
-		//	popoverOptions: CameraPopoverOptions,
-		//	saveToPhotoAlbum: false
-		//};
+		var options = {
+			quality: 50,
+			destinationType: Camera.DestinationType.DATA_URL,
+			sourceType: Camera.PictureSourceType.PHOTOLIBRARY, // CAMERA
+			allowEdit: true,
+			encodingType: Camera.EncodingType.JPEG,
+			targetWidth: 480,
+			popoverOptions: CameraPopoverOptions,
+			saveToPhotoAlbum: false
+		};
 
-
-		//TODO
-
-
+		$cordovaCamera.getPicture(options).then(function(imageData) {
+            $scope.formData.picture = imageData;
+        }, function(err) {
+            console.log(err);
+            $ionicPopup.alert({
+                title: 'Error getting picture',
+                subTitle: 'We had a problem trying to get that picture, please try again.'
+            });
+        });
 	};
 
 });
