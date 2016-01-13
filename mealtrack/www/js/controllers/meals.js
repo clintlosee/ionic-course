@@ -8,9 +8,9 @@ app.controller('MealListCtrl', function ($scope, $ionicLoading, MealService) {
 
 	$scope.meals = MealService;
 
-//	$ionicLoading.show();
+	$ionicLoading.show();
 	$scope.meals.load().then(function () {
-//		$ionicLoading.hide();
+		$ionicLoading.hide();
 	});
 
 	$scope.refreshItems = function () {
@@ -49,8 +49,17 @@ app.controller('MealCreateCtrl', function ($scope,
 
 
 	$scope.trackMeal = function (form) {
-		console.log("MealCreateCtrl::trackMeal");
-		//TODO
+        if (form.$valid) {
+            console.log("MealCreateCtrl::trackMeal");
+            
+            $ionicLoading.show();
+            MealService.track($scope.formData).then(function() {
+                $scope.resetFormData();
+                $ionicLoading.hide();
+                form.$setPristine(true);
+                $state.go('tab.meals');
+            });
+        }
 	};
 
 	$scope.addPicture = function () {
